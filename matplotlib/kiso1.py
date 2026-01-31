@@ -15,13 +15,24 @@ y1 = 3 * x1 + 3    #y = 3x + 3
 y2 = x2 * x2 + 1    # y = x^2 + 1
 
 #グラフ1
-axes[0].plot(x1,y1,marker="s")
+axes[0].plot(
+                x1,y1,marker="s",
+                markersize="6.5",
+                label="ラベルテスト名",
+                linewidth=2,
+                linestyle="-")
 axes[0].set_title("一次関数のグラフ")
 axes[0].set_xlabel("x")
 axes[0].set_ylabel("y")
+axes[0].set_xlim(0,9)
+axes[0].set_ylim(0,30)
+axes[0].legend(loc="upper left")
+
 axes[1].plot(x2,y2,marker="o")
 fig.tight_layout()
 for ax in axes:
     ax.grid(True)
+    ax.set_xlim(0,9)
+    ax.set_ylim(0,30)
 
 plt.show()
